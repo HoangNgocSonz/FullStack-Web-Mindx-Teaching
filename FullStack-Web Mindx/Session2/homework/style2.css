@@ -1,0 +1,33 @@
+header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+#anhdaidien{
+    color: rgb(120, 200, 253);
+}
+.hola{
+    background-color: #666;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+#phongdien{
+    font-size: 18px;
+    color: rgb(255, 154, 154);
+}
+ul li{
+    font-size: 18px;
+    color: rgb(255, 154, 154);
+}
+table{
+    font-size: 18px;
+    color: rgb(255, 154, 154);
+}
+a::before{
+    content: "--->";
+}
+
