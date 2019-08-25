@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-weight: bold;
+        }
+        #menu ul{
+            list-style-type: none;
+            background: rgb(216, 186, 186);
+            text-align:center;
+        }
+        #menu ul li{
+            display: inline-table;
+            width:120px;
+            height: 40px;
+            line-height: 40px;
+            position: relative;
+        }
+        #menu ul li span{
+            color:rgb(0, 153, 255);
+            text-decoration: none;
+            display: block;
+        }
+        #menu ul li span:hover{
+            background-color:rgb(255, 255, 255);
+        }
+        #menu ul li .menu1{
+            display: none;
+            position:absolute;
+        }
+        #menu ul li:hover .menu1{
+            display: block;
+        }
+ 
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li>
+                <span>Item1</span>
+                <ul class="menu1">
+                    <li><span >Item1.1</span></li>
+                    <li><span>Item1.2</span></li>
+                    <li><span>Item1.3</span></li>
+                    <li><span>Item1.4</span></li>
+                </ul>
+            </li>
+            <li>
+                <span>Item2</span>
+                <ul class="menu1">
+                    <li><span>Item2.1</span></li>
+                    <li><span>Item2.2</span></li>
+                    <li><span>Item2.3</span></li>
+                    <li><span>Item2.4</span></li>
+                </ul>
+            </li>
+            <li>
+                <span>Item3</span>
+                <ul class="menu1">
+                    <li><span>Item3.1</span></li>
+                    <li><span>Item3.2</span></li>
+                    <li><span>Item3.3</span></li>
+                    <li><span>Item3.4</span></li>
+                </ul>
+            </li>
+            <li>
+                <span>Item4</span>
+                <ul class="menu1">
+                    <li><span>Item4.1</span></li>
+                    <li><span>Item4.2</span></li>
+                    <li><span>Item4.3</span></li>
+                    <li><span>Item4.4</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
