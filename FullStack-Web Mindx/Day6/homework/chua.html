@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="quote.css" type="text/css">
+</head>
+<body>
+    <div class="div2">
+        <div class="div1">
+            <span> <p id="content"></p> </span>
+            <p id="author"></p>
+            <div id="divB">
+                <button>New qoute</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+    function getRandom(){
+        $.ajax({
+        type:"get",
+        url:"https://api.quotable.io/random",
+        success:function(data){
+            let content=data.content;
+            let author = data.author;
+            $("#content").html(content);
+            $("#author").html(author);
+        },
+        error:function(){
+            throw error;
+        }
+    })
+    }
+
+    $("button").click(function(){
+        getRandom();
+    })
+    </script>
+</body>
+</html>

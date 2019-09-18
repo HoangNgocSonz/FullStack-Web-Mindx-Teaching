@@ -9,7 +9,7 @@
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="1.css" type="text/css">
+    <link rel="stylesheet" href="quote.css" type="text/css">
 </head>
 <body>
     <div class="div2">
@@ -19,16 +19,11 @@
             <div id="divB">
                 <button>New qoute</button>
             </div>
-            
         </div>
     </div>
     
-    
     <script>
     $(document).ready(function() {
-    //    $("#content").click(function(){
-    //    $("#content").html("<b>Hello world!</b>");
-    //    })
         $.get("https://api.quotable.io/random", function(data, status){
             $("#contento").html(data['content'])
             $("#author").html(data['author'])
