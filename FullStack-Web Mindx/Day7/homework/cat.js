@@ -26,9 +26,9 @@ app.post('/user', bodyParser.json(), function (request, response) {
     var user4 = request.body;
     var newKitty = new catModel(user4);
     newKitty.save(function(err,data){
-        if(err){
-            console.log(err);
-            response.send("success");
+        if(err) console.log(err);
+        else{
+            response.end(data.toString());
         }
     })
 })
@@ -37,7 +37,9 @@ app.delete('/user',bodyParser.json(),function(require, response){
     var name=require.body["name"];
     catModel.deleteMany({name:name}).exec(function(err,data){
         if(err) console.log(err);
-        response.send("success");
+        else{
+            response.end(data.toString());
+        }
     })
   })
 
@@ -46,8 +48,10 @@ app.delete('/user',bodyParser.json(),function(require, response){
     var age = require.body["age"];
     catModel.updateOne({},{$set:{"age":age,"name":name}}).exec(function(err,data){
         if(err) console.log(err);
+        else{
+            response.end(data.toString());
+        }
     })
-    response.send("success");
 })
 
 var server = app.listen(port, function () {
