@@ -28,7 +28,7 @@ app.post('/user', bodyParser.json(), function (request, response) {
     newKitty.save(function(err,data){
         if(err) console.log(err);
         else{
-            response.end(data.toString());
+            response.end("success");
         }
     })
 })
@@ -38,7 +38,7 @@ app.delete('/user',bodyParser.json(),function(require, response){
     catModel.deleteMany({name:name}).exec(function(err,data){
         if(err) console.log(err);
         else{
-            response.end(data.toString());
+            response.end("success");
         }
     })
   })
@@ -49,7 +49,7 @@ app.delete('/user',bodyParser.json(),function(require, response){
     catModel.updateOne({},{$set:{"age":age,"name":name}}).exec(function(err,data){
         if(err) console.log(err);
         else{
-            response.end(data.toString());
+            response.end("success");
         }
     })
 })
