@@ -6,17 +6,17 @@ var catModel = mongoose.model('Cat',{
     age: Number
 });
 
-// catModel.find().exec(function(err,data){
-//     if(err) console.log(err);
-//     else{
-//         console.log(data);
-//     }
-// })
+catModel.find().exec(function(err,data){
+    if(err) console.log(err);
+    else{
+        console.log(data);
+    }
+})
 
-// catModel.find({}).exec(function(err,data){
-//     if(err) console.log(err);
-//     console.log(data);
-// })
+catModel.find({}).exec(function(err,data){
+    if(err) console.log(err);
+    console.log(data);
+})
 
 var newKitty = new catModel({
     name: "sony",
@@ -30,19 +30,19 @@ newKitty.save(function(err,data){
 })
 
 
-// catModel.find({age: {$lt:3}}).limit(3).skip(2).sort({name: "asc"}).exec(function(err,data){
-//     if(err) console.log(err);
-//     console.log(data);
-// })
+catModel.find({age: {$lt:3}}).limit(3).skip(2).sort({name: "asc"}).exec(function(err,data){
+    if(err) console.log(err);
+    console.log(data);
+})
 
-// catModel.deleteMany({name:"leg long"}).exec(function(err,data){
-//     if(err) console.log(err);//err
-//     console.log(data);
-// })
+catModel.deleteMany({name:"leg long"}).exec(function(err,data){
+    if(err) console.log(err);//err
+    console.log(data);
+})
 
-// catModel.updateMany({},{$set:{"age":4}}).exec(function(err,data){
-//     if(err) console.log(err);
-// })
+catModel.updateMany({},{$set:{"age":4}}).exec(function(err,data){
+    if(err) console.log(err);
+})
 
 
 
