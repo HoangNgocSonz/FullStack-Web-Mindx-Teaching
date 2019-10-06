@@ -10,11 +10,11 @@ const BookSchema = mongoose.Schema({
 const BookModel = mongoose.model('Book',BookSchema);
 
 const find = async function(query){
-    return await BookSchema.find(query);
+    return await BookModel.find(query);
 }
 
 const findById = async function(id){
-    return await BookSchema.findById(id);
+    return await BookModel.findById(id);
 }
 
 const create = async function(data){
@@ -23,7 +23,7 @@ const create = async function(data){
 }
 
 const update = async function(id,data){
-    return await BookModel.findByIdAndUpdate(id,{$set:data});
+    return await BookModel.findByIdAndUpdate(id,{$set:data},{new:true});
 }
 const  deleteOne = async function(id){
     return await BookModel.findByIdAndDelete(id);
