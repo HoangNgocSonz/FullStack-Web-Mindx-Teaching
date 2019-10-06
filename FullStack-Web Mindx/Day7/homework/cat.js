@@ -12,7 +12,6 @@ var catModel = mongoose.model('Cat',{
     age: Number
 });
 
-
 app.get('/user', function (request, response) {
     catModel.find().exec(function(err,data){
         if(err) console.log(err);

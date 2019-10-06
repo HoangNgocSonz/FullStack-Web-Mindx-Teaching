@@ -1,9 +1,9 @@
 $("#myBtn").click(function(event){
     event.preventDefault();
-    $("#result-list").text("");
     var x = document.getElementById("keyword").value;
-    $.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${x}x&type=video&key=AIzaSyA9gQZ-oYomFypZN7PsupZJtOfQqA6Q3qw`, function(data, status){
-    console.log(data);
+    $("#result-list").text("");
+    $.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${x}&type=video&key=AIzaSyA9gQZ-oYomFypZN7PsupZJtOfQqA6Q3qw`, function(data, status){
+    console.log(x);
     
 
         for(var i=0;i<25;i++){
@@ -20,7 +20,7 @@ $("#myBtn").click(function(event){
         var next =data.nextPageToken;
         console.log(next);
         function getMore(){
-            $.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=chipu&type=video&key=AIzaSyA9gQZ-oYomFypZN7PsupZJtOfQqA6Q3qw&pageToken=${next}`, function(data, status){
+            $.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${x}&type=video&key=AIzaSyA9gQZ-oYomFypZN7PsupZJtOfQqA6Q3qw&pageToken=${next}`, function(data, status){
                     for(var i=0;i<25;i++){
                         $("#result-list").append(
                             `
