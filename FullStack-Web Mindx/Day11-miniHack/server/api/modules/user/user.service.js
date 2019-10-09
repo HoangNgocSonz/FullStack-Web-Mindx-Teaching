@@ -1,22 +1,14 @@
-const repository = require('./book.repository');
-// const find = async function(query){
-//     return await repository.find(query);
-// }
-const find = async function (query) {
-    const data = await repository.find(query);
-    const total = await repository.count(query);
-    return {
-      data: data,
-      total: total,
-    }
-  }
+const repository = require('./user.repository');
+const find = async function(query){
+    return await repository.find(query);
+}
 
 const findById = async function(id){
     return await repository.findById(id);
 }
 
 const create = async function(data){
-    if(!data || !data.title || !data.author){
+    if(false){
         throw new error("missing input");
     }
     return await repository.create(data);
@@ -44,4 +36,3 @@ module.exports = {
     update:update,
     delete:deleteOne,
 }
-
