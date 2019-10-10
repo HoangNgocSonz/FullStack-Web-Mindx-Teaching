@@ -16,9 +16,9 @@ $(document).ready(function() {
           }
           $("#user-list").append(`
             <div class="col-12 mt-3 mb-3">
-              <div class="row">
+              <div class="row" id="divl">
                 <div class="col-3">
-                  <img class="image-placeholder" src="https://timedotcom.files.wordpress.com/2015/06/521811839-copy.jpg"></img>
+                  <img class="image-placeholder" src="https://timedotcom.files.wordpress.com/2015/06/521811839-copy.jpg" ></img>
                 </div>
                 <div class="col-9">
                   <h3 class="text-success">${data.data[i].title}</h3>
