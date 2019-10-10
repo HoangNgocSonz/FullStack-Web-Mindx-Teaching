@@ -31,6 +31,11 @@ $(document).ready(function() {
           `)
         }
 
+        $("#pagination-list").append(`
+        <li class="page-item">
+            <a class="page-link" href="#">Previous</a>
+        </li>
+      `)
         // Xu li total
         for ( let i = 1; i <= Math.ceil(data.total / NUMBER_OF_USER); i++) {
           $("#pagination-list").append(`
@@ -81,8 +86,16 @@ function loadPage(pageNumber) {
           `)
         }
 
+
+
         // Xu li total
         $("#pagination-list").html("");
+
+        $("#pagination-list").append(`
+        <li class="page-item">
+            <a class="page-link" href="#">Previous</a>
+        </li>
+      `)
         for ( let i = 1; i <= Math.ceil(data.total / NUMBER_OF_USER); i++) {
           $("#pagination-list").append(`
             <li class="page-item" onclick="loadPage(${i})">
